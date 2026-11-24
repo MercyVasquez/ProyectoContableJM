@@ -83,7 +83,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         ADM.setText("ADM");
         ADM.addActionListener(this::ADMActionPerformed);
 
-        Normal.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        Normal.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         Normal.setText("Normal");
 
         MPassword.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
@@ -152,7 +152,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -180,11 +180,11 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         MCorreo.setBorder(null);
 
         MGuardar.setBackground(new java.awt.Color(0, 65, 69));
-        MGuardar.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MGuardar.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         MGuardar.setForeground(new java.awt.Color(255, 255, 255));
         MGuardar.setText("Guardar");
 
-        MSalir.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MSalir.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         MSalir.setText("Salir");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
