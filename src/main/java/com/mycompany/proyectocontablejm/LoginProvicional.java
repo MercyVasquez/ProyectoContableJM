@@ -71,28 +71,7 @@ public class LoginProvicional extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        String login = txtUsuario.getText().trim();
-        String pass = new String(password.getPassword()).trim();
-        
-        boolean encontrado = false;
-        
-        File archivo = new File("Usuarios.txt");
-        
-        try{
-            if(!archivo.exists()){
-                archivo.createNewFile();
-            }
-            BufferedReader lector = new BufferedReader(new FileReader(archivo));
-            String linea;
-            
-            while ((linea = lector.readLine()) != null){
-                if(linea.trim().isEmpty()) continue;
-                
-                String[] partes = linea.split("\\s*-\\s*");
-                
-                if (partes.length >= 3 && partes)
-            }
-        }
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
