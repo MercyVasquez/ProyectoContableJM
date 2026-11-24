@@ -133,6 +133,7 @@ public class Login extends javax.swing.JFrame {
 
         BSalir.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         BSalir.setText("Salir");
+        BSalir.addActionListener(this::BSalirActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -264,6 +265,10 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error leyendo el archivo: " + e.getMessage());
         }
     }//GEN-LAST:event_BLoginActionPerformed
+
+    private void BSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BSalirActionPerformed
 
     /**
      * @param args the command line arguments
