@@ -35,21 +35,23 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         MUsuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        MPassword = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         ADM = new javax.swing.JRadioButton();
         Normal = new javax.swing.JRadioButton();
+        MPassword = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        MNombre = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField2 = new javax.swing.JTextField();
+        MApellido = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
+        MCorreo = new javax.swing.JTextField();
         MGuardar = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
+        MSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,15 +59,24 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setText("Editar usuario o qsy");
+        jLabel4.setBackground(new java.awt.Color(0, 69, 65));
+        jLabel4.setFont(new java.awt.Font("Bahnschrift", 1, 21)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 69, 65));
+        jLabel4.setText("Mantenimiento de usuario");
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 69, 65));
         jLabel1.setText("Usser");
 
+        MUsuario.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        MUsuario.setBorder(null);
+
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 69, 65));
         jLabel2.setText("Password");
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 69, 65));
         jLabel3.setText("Tipo de usuario");
 
         ADM.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
@@ -75,37 +86,38 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         Normal.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         Normal.setText("Normal");
 
+        MPassword.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        MPassword.setBorder(null);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(MPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(MUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator2)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MUsuario)
+                    .addComponent(jSeparator1)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(ADM, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Normal, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addGap(11, 11, 11)
+                        .addComponent(jLabel4)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(63, 63, 63)
                 .addComponent(jLabel4)
-                .addGap(36, 36, 36)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,7 +135,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ADM)
                     .addComponent(Normal))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -146,21 +158,34 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 69, 65));
         jLabel5.setText("Nombre");
 
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 69, 65));
         jLabel6.setText("Apellido");
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 69, 65));
         jLabel7.setText("Correo");
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        MNombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        MNombre.setBorder(null);
+        MNombre.addActionListener(this::MNombreActionPerformed);
 
-        jTextField2.setText("jTextField2");
+        MApellido.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        MApellido.setBorder(null);
 
-        jTextField3.setText("jTextField3");
+        MCorreo.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        MCorreo.setBorder(null);
 
+        MGuardar.setBackground(new java.awt.Color(0, 65, 69));
+        MGuardar.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MGuardar.setForeground(new java.awt.Color(255, 255, 255));
         MGuardar.setText("Guardar");
+
+        MSalir.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MSalir.setText("Salir");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -168,17 +193,20 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MGuardar)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1)
-                        .addComponent(jSeparator3)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                        .addComponent(jSeparator4)
-                        .addComponent(jTextField3)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MNombre)
+                    .addComponent(jSeparator3)
+                    .addComponent(MApellido)
+                    .addComponent(jSeparator4)
+                    .addComponent(MCorreo)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(MGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                        .addComponent(MSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator5))
                 .addGap(31, 31, 31))
         );
         jPanel2Layout.setVerticalGroup(
@@ -187,21 +215,25 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
                 .addGap(75, 75, 75)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(MGuardar)
+                .addComponent(MCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MGuardar)
+                    .addComponent(MSalir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -228,9 +260,9 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ADMActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void MNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_MNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,8 +291,12 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ADM;
+    private javax.swing.JTextField MApellido;
+    private javax.swing.JTextField MCorreo;
     private javax.swing.JButton MGuardar;
-    private javax.swing.JTextField MPassword;
+    private javax.swing.JTextField MNombre;
+    private javax.swing.JPasswordField MPassword;
+    private javax.swing.JButton MSalir;
     private javax.swing.JTextField MUsuario;
     private javax.swing.JRadioButton Normal;
     private javax.swing.JLabel jLabel1;
@@ -277,8 +313,6 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JSeparator jSeparator5;
     // End of variables declaration//GEN-END:variables
 }
