@@ -2,12 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package proyectocontablejm;
+package com.mycompany.proyectocontablejm;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author 2723g
  */
+
 public class MantenimientoUsuario extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MantenimientoUsuario.class.getName());
@@ -19,6 +30,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         initComponents();
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,6 +40,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,6 +65,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         MGuardar = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         MSalir = new javax.swing.JButton();
+        MModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,14 +93,14 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 69, 65));
         jLabel3.setText("Tipo de usuario");
 
+        buttonGroup1.add(ADM);
         ADM.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         ADM.setText("ADM");
-        ADM.setEnabled(false);
         ADM.addActionListener(this::ADMActionPerformed);
 
+        buttonGroup1.add(Normal);
         Normal.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         Normal.setText("Normal");
-        Normal.setEnabled(false);
 
         MPassword.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         MPassword.setBorder(null);
@@ -185,9 +199,15 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         MGuardar.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         MGuardar.setForeground(new java.awt.Color(255, 255, 255));
         MGuardar.setText("Guardar");
+        MGuardar.addActionListener(this::MGuardarActionPerformed);
 
         MSalir.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         MSalir.setText("Salir");
+        MSalir.addActionListener(this::MSalirActionPerformed);
+
+        MModificar.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MModificar.setText("Modificar");
+        MModificar.addActionListener(this::MModificarActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -195,20 +215,22 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MNombre)
-                    .addComponent(jSeparator3)
-                    .addComponent(MApellido)
-                    .addComponent(jSeparator4)
-                    .addComponent(MCorreo)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(MGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                        .addComponent(MSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator5))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MNombre)
+                        .addComponent(jSeparator3)
+                        .addComponent(MApellido)
+                        .addComponent(jSeparator4)
+                        .addComponent(MCorreo)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(MGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                            .addComponent(MSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator5)))
                 .addGap(31, 31, 31))
         );
         jPanel2Layout.setVerticalGroup(
@@ -236,6 +258,8 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MGuardar)
                     .addComponent(MSalir))
+                .addGap(18, 18, 18)
+                .addComponent(MModificar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -266,6 +290,97 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MNombreActionPerformed
 
+    private void MSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_MSalirActionPerformed
+
+    private void MGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MGuardarActionPerformed
+        //para jenni de mercy: guardar datos
+        String usuario = MUsuario.getText().trim();
+        String password = new String(MPassword.getPassword()).trim();
+        String nombre = MNombre.getText().trim();
+        String apellido = MApellido.getText().trim();
+        String correo = MCorreo.getText().trim();
+    
+    // guardar tipo de usuario
+        String nivel = "";
+        if (ADM.isSelected()) {
+            nivel = "Admin"; // O "ADM", asegúrate que coincida con lo que evalúa tu Login
+        } else if (Normal.isSelected()) {
+            nivel = "Normal";
+        }
+        if (usuario.isEmpty() || password.isEmpty() || nivel.isEmpty() || 
+                nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No dejar nada vacio.");
+            return;
+        }
+
+    //guardar en txt
+        try (FileWriter fw = new FileWriter("C:\\Users\\User\\Documents\\NetBeansProjects\\ProyectoContableJM\\GuardadoDatos\\Usuarios.txt", true);
+            PrintWriter pw = new PrintWriter(fw)) {
+            pw.println(usuario + "-" + password + " - " + nivel + " - " + nombre + " - " + apellido + " - " + correo +"\n");
+            JOptionPane.showMessageDialog(this, "Usuario guardado correctamente.");
+            limpiarCampos();
+        
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar el usuario: " + e.getMessage());
+        }
+    }//GEN-LAST:event_MGuardarActionPerformed
+
+    private void MModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MModificarActionPerformed
+        String usuario = MUsuario.getText().trim();
+        String password = MPassword.getText().trim();
+        String nombre = MNombre.getText().trim();
+        String apellido = MApellido.getText().trim();
+        String correo = MCorreo.getText().trim();
+        String nivel = ADM.isSelected() ? "Admin" : (Normal.isSelected() ? "Normal" : "");
+        
+        if (usuario.isEmpty() || password.isEmpty() || nivel.isEmpty() || 
+            nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Lo lleno con to' vacio?\nLlenalo");
+            return;
+        }
+        File archivo = new File("C:\\Users\\User\\Documents\\NetBeansProjects\\ProyectoContableJM\\GuardadoDatos\\Usuarios.txt");
+        if (!archivo.exists()) {
+            JOptionPane.showMessageDialog(this, "Ese tal usuario se encuentra entre nosotros?");
+            return;
+        }
+        ArrayList<String> lineas = new ArrayList<>();
+        boolean encontrado = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            if (linea.trim().isEmpty()) continue;
+            String[] datos = linea.split(" - ");
+            
+            // Si coincide el usuario, conserva datos[0] intacto y actualiza el resto
+            if (datos.length > 0 && datos[0].trim().equalsIgnoreCase(usuario)) {
+                lineas.add(datos[0] + " - " + password + " - " + nivel + " - " + nombre + " - " + apellido + " - " + correo);
+                encontrado = true;
+            } else {
+                lineas.add(linea);
+            }
+        }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al leer archivo: " + e.getMessage());
+            return;
+        }
+        if (!encontrado) {
+            JOptionPane.showMessageDialog(this, "El usuario no existe. Usa el botón Guardar para crearlo.");
+            return;
+        }
+        try (PrintWriter pw = new PrintWriter(new FileWriter(archivo, false))) {
+            for (String l : lineas) {
+                pw.println(l);
+        }
+            JOptionPane.showMessageDialog(this, "Usuario modificado correctamente.");
+            limpiarCampos();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al modificar: " + e.getMessage());
+        }
+    }//GEN-LAST:event_MModificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,17 +405,28 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new MantenimientoUsuario().setVisible(true));
     }
-
+    
+    private void limpiarCampos() {
+        MUsuario.setText("");
+        MPassword.setText("");
+        MNombre.setText("");
+        MApellido.setText("");
+        MCorreo.setText("");
+        buttonGroup1.clearSelection();
+        MUsuario.requestFocus();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ADM;
     private javax.swing.JTextField MApellido;
     private javax.swing.JTextField MCorreo;
     private javax.swing.JButton MGuardar;
+    private javax.swing.JButton MModificar;
     private javax.swing.JTextField MNombre;
     private javax.swing.JPasswordField MPassword;
     private javax.swing.JButton MSalir;
     private javax.swing.JTextField MUsuario;
     private javax.swing.JRadioButton Normal;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

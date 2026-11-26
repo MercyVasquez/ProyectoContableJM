@@ -551,7 +551,10 @@ public PanelInfo(String nivel) {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void bnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnUsuarioActionPerformed
-        // TODO add your handling code here:
+        MantenimientoUsuario user = new MantenimientoUsuario();
+        user.setVisible(true);
+        
+        
     }//GEN-LAST:event_bnUsuarioActionPerformed
 
     /**
