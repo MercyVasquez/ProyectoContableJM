@@ -66,6 +66,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         MSalir = new javax.swing.JButton();
         MModificar = new javax.swing.JButton();
+        MEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,9 +206,15 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
         MSalir.setText("Salir");
         MSalir.addActionListener(this::MSalirActionPerformed);
 
+        MModificar.setBackground(new java.awt.Color(0, 65, 69));
         MModificar.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MModificar.setForeground(new java.awt.Color(255, 255, 255));
         MModificar.setText("Modificar");
         MModificar.addActionListener(this::MModificarActionPerformed);
+
+        MEliminar.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        MEliminar.setText("Eliminar");
+        MEliminar.addActionListener(this::MEliminarActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -215,22 +222,24 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(MNombre)
-                        .addComponent(jSeparator3)
-                        .addComponent(MApellido)
-                        .addComponent(jSeparator4)
-                        .addComponent(MCorreo)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(MGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                            .addComponent(MSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator5)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(MModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                    .addComponent(jSeparator3)
+                    .addComponent(MApellido)
+                    .addComponent(jSeparator4)
+                    .addComponent(MCorreo)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(MGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator5))
                 .addGap(31, 31, 31))
         );
         jPanel2Layout.setVerticalGroup(
@@ -257,9 +266,11 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MGuardar)
-                    .addComponent(MSalir))
+                    .addComponent(MEliminar))
                 .addGap(18, 18, 18)
-                .addComponent(MModificar)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MModificar)
+                    .addComponent(MSalir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -367,7 +378,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
             return;
         }
         if (!encontrado) {
-            JOptionPane.showMessageDialog(this, "El usuario no existe. Usa el botón Guardar para crearlo.");
+            JOptionPane.showMessageDialog(this, "El usuario no existe. Boton equivocado, dale a crear :)");
             return;
         }
         try (PrintWriter pw = new PrintWriter(new FileWriter(archivo, false))) {
@@ -380,6 +391,10 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al modificar: " + e.getMessage());
         }
     }//GEN-LAST:event_MModificarActionPerformed
+
+    private void MEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MEliminarActionPerformed
+        // falta configurar
+    }//GEN-LAST:event_MEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,6 +434,7 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
     private javax.swing.JRadioButton ADM;
     private javax.swing.JTextField MApellido;
     private javax.swing.JTextField MCorreo;
+    private javax.swing.JButton MEliminar;
     private javax.swing.JButton MGuardar;
     private javax.swing.JButton MModificar;
     private javax.swing.JTextField MNombre;
