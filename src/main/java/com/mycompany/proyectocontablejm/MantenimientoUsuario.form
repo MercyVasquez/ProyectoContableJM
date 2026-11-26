@@ -198,6 +198,7 @@
                   <Font name="Bahnschrift" size="12" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ADM"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ADMActionPerformed"/>
@@ -209,6 +210,7 @@
                   <Font name="Bahnschrift" size="12" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Normal"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="MPassword">

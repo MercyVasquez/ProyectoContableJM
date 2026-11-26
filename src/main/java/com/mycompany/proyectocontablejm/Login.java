@@ -38,7 +38,6 @@ public class Login extends javax.swing.JFrame {
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         Derecha = new javax.swing.JPanel();
@@ -63,9 +62,6 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(19, 25, 30));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectocontablejm/LIcon.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Bienvenido.");
@@ -79,27 +75,20 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jLabel5)
-                .addGap(39, 39, 39)
+                .addGap(172, 172, 172)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
 
         Derecha.setBackground(new java.awt.Color(19, 25, 30));
@@ -228,32 +217,38 @@ public class Login extends javax.swing.JFrame {
         boolean encontrado = false;
         String nivel = "";
 
-        File archivo = new File("usuarios.txt");
+        File archivo = new File("C:\\Users\\User\\Documents\\NetBeansProjects\\ProyectoContableJM\\GuardadoDatos\\Usuarios.txt");
+        
         try {
             if (!archivo.exists()) {archivo.createNewFile();}
 
-        BufferedReader lector = new BufferedReader(new FileReader(archivo));
-        String linea;
-
-        while ((linea = lector.readLine()) != null) {
-            if (linea.trim().isEmpty()) continue;
-
-            // Separa por " - "
-            String[] partes = linea.split("\\s*-\\s*");
-            // partes[0]=LOGIN, partes[1]=PASS, partes[2]=NIVEL
-
-            if (partes.length >= 3 && partes[0].equals(login) && partes[1].equals(passw)) {
-                encontrado = true;
-                nivel = partes[2];
-                break;
-            }
-        }
-        lector.close();
+            try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                
+                while ((linea = lector.readLine()) != null) {
+                    
+                    System.out.println("Línea leída: " + linea);
+                    
+                    if (linea.trim().isEmpty()) continue;
+                    
+                    String[] partes = linea.split("\\s*-\\s*", -1);
+                    
+                    if (partes.length >= 3
+                            && partes[0].trim().equalsIgnoreCase(login)
+                            && partes[1].trim().equals(pass)) {
+                        
+                        encontrado = true;
+                        nivel = partes[2].trim();
+                        break;
+                    }
+                }           }
 
         if (encontrado) {
             // Abre el menú principal y le pasa el nivel
             //MenuPrincipal menu = new MenuPrincipal(nivel);
             //menu.setVisible(true);
+            JOptionPane.showMessageDialog(this, "Hola, bienvenido");
+            
             this.dispose(); // cierra el login
         } else {
             JOptionPane.showMessageDialog(this, "El usuario y/o la contraseña no existen");
@@ -304,7 +299,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

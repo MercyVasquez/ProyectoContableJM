@@ -81,10 +81,12 @@ public class MantenimientoUsuario extends javax.swing.JFrame {
 
         ADM.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         ADM.setText("ADM");
+        ADM.setEnabled(false);
         ADM.addActionListener(this::ADMActionPerformed);
 
         Normal.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
         Normal.setText("Normal");
+        Normal.setEnabled(false);
 
         MPassword.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         MPassword.setBorder(null);
