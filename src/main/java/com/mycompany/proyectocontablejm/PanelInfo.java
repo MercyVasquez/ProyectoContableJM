@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package proyectocontablejm;
+package com.mycompany.proyectocontablejm;
 
 /**
  *
@@ -15,9 +15,26 @@ public class PanelInfo extends javax.swing.JFrame {
     /**
      * Creates new form PanelInfo
      */
-    public PanelInfo() {
-        initComponents();
+// 1. Constructor vacío (necesario para la vista Design de NetBeans)
+public PanelInfo() {
+    initComponents();
+}
+public PanelInfo(String nivel) {
+    initComponents();
+    if (nivel != null && nivel.equalsIgnoreCase("Admin")) {
+        MmUsuario.setEnabled(true);
+        MnTransacciones.setEnabled(true);
+        bnUsuario.setEnabled(true);
+        bnTransaccion.setEnabled(true);
+        bnCatalogo.setEnabled(true);
+    } else {
+        MmUsuario.setEnabled(false);
+        MnTransacciones.setEnabled(false);
+        bnUsuario.setEnabled(false);
+        bnTransaccion.setEnabled(false);
+        bnCatalogo.setEnabled(false);
     }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,19 +59,18 @@ public class PanelInfo extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        bnUsuario = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bnCatalogo = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        bnTransaccion = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
@@ -69,7 +85,7 @@ public class PanelInfo extends javax.swing.JFrame {
         MmUsuario = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        MnTransacciones = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -146,10 +162,10 @@ public class PanelInfo extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 69, 65));
         jLabel6.setText("Mantenimiento");
 
-        jButton4.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jButton4.setText("Usuario");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(this::jButton4ActionPerformed);
+        bnUsuario.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        bnUsuario.setText("Usuario");
+        bnUsuario.setBorder(null);
+        bnUsuario.addActionListener(this::bnUsuarioActionPerformed);
 
         jButton5.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jButton5.setText("Catalogo de cuentas");
@@ -163,7 +179,7 @@ public class PanelInfo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
                 .addGap(14, 14, 14))
         );
@@ -173,7 +189,7 @@ public class PanelInfo extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bnUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(12, Short.MAX_VALUE))
@@ -206,10 +222,10 @@ public class PanelInfo extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Nueva transaccion");
 
-        jButton2.setBackground(new java.awt.Color(0, 69, 65));
-        jButton2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Catalogo de cuentas");
+        bnCatalogo.setBackground(new java.awt.Color(0, 69, 65));
+        bnCatalogo.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        bnCatalogo.setForeground(new java.awt.Color(255, 255, 255));
+        bnCatalogo.setText("Catalogo de cuentas");
 
         jButton3.setBackground(new java.awt.Color(0, 69, 65));
         jButton3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
@@ -231,7 +247,7 @@ public class PanelInfo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(bnCatalogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
                 .addGap(20, 20, 20))
@@ -244,7 +260,7 @@ public class PanelInfo extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(bnCatalogo))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -253,14 +269,10 @@ public class PanelInfo extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 69, 65));
         jLabel8.setText("Movimiento");
 
-        jButton6.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jButton6.setText("Transacciones");
-        jButton6.setBorder(null);
-        jButton6.addActionListener(this::jButton6ActionPerformed);
-
-        jButton7.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jButton7.setText("Catalogo de cuentas");
-        jButton7.setBorder(null);
+        bnTransaccion.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        bnTransaccion.setText("Transacciones");
+        bnTransaccion.setBorder(null);
+        bnTransaccion.addActionListener(this::bnTransaccionActionPerformed);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -268,10 +280,9 @@ public class PanelInfo extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(134, Short.MAX_VALUE)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+                    .addComponent(bnTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
         jPanel10Layout.setVerticalGroup(
@@ -280,10 +291,8 @@ public class PanelInfo extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(bnTransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jLabel12.setBackground(new java.awt.Color(0, 69, 65));
@@ -396,7 +405,7 @@ public class PanelInfo extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(49, 49, 49)
                                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(41, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -471,8 +480,8 @@ public class PanelInfo extends javax.swing.JFrame {
 
         jMenu2.setText("Movimiento");
 
-        jMenuItem3.setText("Transacciones");
-        jMenu2.add(jMenuItem3);
+        MnTransacciones.setText("Transacciones");
+        jMenu2.add(MnTransacciones);
 
         jMenuBar1.add(jMenu2);
 
@@ -533,17 +542,17 @@ public class PanelInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void bnTransaccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnTransaccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_bnTransaccionActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void bnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_bnUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -567,21 +576,21 @@ public class PanelInfo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new PanelInfo().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new PanelInfo("Admin").setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MMantenimiento;
     private javax.swing.JMenuItem MmUsuario;
+    private javax.swing.JMenuItem MnTransacciones;
+    private javax.swing.JButton bnCatalogo;
+    private javax.swing.JButton bnTransaccion;
+    private javax.swing.JButton bnUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -602,7 +611,6 @@ public class PanelInfo extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

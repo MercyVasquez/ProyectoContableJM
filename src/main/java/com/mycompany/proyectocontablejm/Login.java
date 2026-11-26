@@ -4,6 +4,7 @@
  */
 package proyectocontablejm;
 
+import com.mycompany.proyectocontablejm.PanelInfo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -244,12 +245,10 @@ public class Login extends javax.swing.JFrame {
                 }           }
 
         if (encontrado) {
-            // Abre el menú principal y le pasa el nivel
-            //MenuPrincipal menu = new MenuPrincipal(nivel);
-            //menu.setVisible(true);
             JOptionPane.showMessageDialog(this, "Hola, bienvenido");
-            
-            this.dispose(); // cierra el login
+            PanelInfo panel = new PanelInfo(nivel);
+            panel.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "El usuario y/o la contraseña no existen");
             Usuario.setText("");
